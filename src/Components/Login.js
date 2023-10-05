@@ -7,6 +7,7 @@ import { auth } from "../Utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { AddUser } from "../Utils/userSlice";
+import { BgImg } from "../Utils/constants";
 
 function Login() {
   const [SignInForm, setSignInForm] = useState(true);
@@ -54,7 +55,6 @@ function Login() {
                   photoURL: photoURL,
                 })
               );
-              navigate("browse");
               console.log(user);
             })
             .catch((error) => {
@@ -82,7 +82,6 @@ function Login() {
           // Signed in
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse");
           // ...
         })
         .catch((error) => {
@@ -103,7 +102,7 @@ function Login() {
       <div className="absolute">
         <img
           className=" bg-opacity-80 bg-gradient-to-b from-black"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/855ed6e2-d9f1-4afd-90da-96023ec747c3/85eb5b91-25ed-4965-ace9-ba8e4a0ead8d/IN-en-20230828-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
+          src={BgImg}
           alt="BgImg"
         />
       </div>
