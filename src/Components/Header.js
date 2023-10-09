@@ -66,25 +66,27 @@ function Header() {
   }
 
   return (
-    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 bg-opacity-80 flex justify-between">
-      <img className="w-52" src={LOGO_URL} alt="Logo Url" />
+    <div className="absolute w-screen md:px-8 md:py-2 bg-gradient-to-b from-black z-10 bg-opacity-80  flex flex-col md:flex-row justify-between">
+      <img className="w-52 mx-auto md:mx-0" src={LOGO_URL} alt="Logo Url" />
+      
       {user && (
-        <div className="flex p-4">
-        {showGptSearch && ( <select  className ="p-2 m-2 bg-gray-900 text-white" onChange={handleChange}>
+        <div className="flex p-4 justify-between ">
+        {showGptSearch && ( <select  className ="md:p-2 md:mx-4 h-14 p-2 bg-gray-900 text-white rounded-lg" onChange={handleChange}>
           {Supported_Langauages.map((lang)=>(
           <option key={lang.Identifier} value = {lang.Identifier}>{lang.name}</option>
           ))}
         </select>)}
+        <h1 className="hidden font-semibold text-lg text-white md:p-2 md:mx-4 py-8 mx-4">Hello {user.displayName}!!!</h1>
           <button
             onClick={handleGPTSerach}
-            className="font-semibold text-white p-2 mx-4 rounded-lg bg-blue-500 cursor-pointer">
+            className="font-semibold text-white md:p-2 md:mx-4  p-2 mx-4 rounded-lg bg-blue-500 cursor-pointer">
             {showGptSearch ? "Homepage" : "GPT Search"}
           </button>
-          <img className="w-12 h-12" src={IMG} alt="SignOut Url" />
+          <img className="hidden md:block w-14 h-14 rounded-lg" src={IMG} alt="SignOut Url" />
           <button
             onClick={handleSignOut}
-            className="font-semibold text-white p-2 cursor-pointer">
-            Sign Out
+            className="font-semibold text-white p-2 cursor-pointer rounded-lg ">
+            Sign Out 
           </button>
         </div>
       )}

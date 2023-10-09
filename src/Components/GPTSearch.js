@@ -6,15 +6,17 @@ import { BgImg } from '../Utils/constants'
 const GPTSearch = () => {
   return (
     <div>
-      <div className="absolute -z-10">
+      <div className="fixed -z-10">
         <img
-          className=" bg-opacity-80 bg-gradient-to-b from-black"
+          className="object-cover h-screen md:h-auto bg-opacity-80 bg-gradient-to-b from-black"
           src={BgImg}
           alt="BgImg"
         />
       </div>
-        <GptSearchBar />
+      <div className='pt-[40%] md:p-0'>
+      <GptSearchBar />
         <GptMovieSuggestions />
+      </div>
     </div>
   )
 }

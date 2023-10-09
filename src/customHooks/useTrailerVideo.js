@@ -7,6 +7,12 @@ import { useEffect } from "react";
     //fetch trailer video and Updating the store with trailer movie data
 
   const dispatch = useDispatch();
+
+  const trailerVideo = useSelector(
+    (store) => store.movies.trailerVideo
+  );
+
+
   const getMovieVideos = async () => {
     const data = await fetch(
       "https://api.themoviedb.org/3/movie/"+movieId+"/videos?language=en-US",
@@ -20,7 +26,7 @@ import { useEffect } from "react";
     dispatch(addTrailerVideo(trailer))
   };
   useEffect(() => {
-    getMovieVideos();
+   !trailerVideo && getMovieVideos();
   }, []);
 
  }

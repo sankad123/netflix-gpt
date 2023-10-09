@@ -101,14 +101,14 @@ function Login() {
       <Header />
       <div className="absolute">
         <img
-          className=" bg-opacity-80 bg-gradient-to-b from-black"
+          className="h-screen md:h-auto object-cover bg-opacity-80"
           src={BgImg}
           alt="BgImg"
         />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className=" text-white md:w-4/12 w- bg-black p-12 absolute my-36 mx-auto right-0 left-0 bg-opacity-80">
+        className="text-white md:w-4/12 w-full bg-black p-12 absolute my-36 mx-auto right-0 left-0 bg-opacity-70">
         <h1 className=" text-3xl py-4 px-1 font-bold">
           {SignInForm ? "Sign In" : "Sign Up"}
         </h1>
